@@ -1,0 +1,23 @@
+[
+  {
+    "fromAccount": "ACC-00000",
+    "toAccount": "ACC-ALICE",
+    "amount": 5000.00,
+    "currency": "USD",
+    "type": "DEPOSIT"
+  },
+  {
+    "fromAccount": "ACC-00000",
+    "toAccount": "ACC-BOB",
+    "amount": 3000.00,
+    "currency": "USD",
+    "type": "DEPOSIT"
+  },
+  {
+    "fromAccount": "ACC-00000",
+    "toAccount": "ACC-CHARLIE",
+    "amount": 2000.00,
+    "currency": "EUR",
+    "type": "DEPOSIT"
+  }
+]
