@@ -21,12 +21,22 @@ A simple and clean REST API for managing banking transactions, built with **Java
 
 - ✅ Create banking transactions (deposit, withdrawal, transfer)
 - ✅ List all transactions
+- ✅ **Filter transactions** by account ID, type, and date range ⭐ NEW
 - ✅ Get transaction by ID
 - ✅ Check account balance
 - ✅ Input validation with meaningful error messages
 - ✅ In-memory storage (no database required)
 - ✅ RESTful API design with proper HTTP status codes
 - ✅ Global exception handling
+
+### 🆕 Transaction Filtering (NEW)
+Filter transactions using query parameters:
+- **By Account**: `?accountId=ACC-12345` - matches both sender and receiver
+- **By Type**: `?type=TRANSFER` - filter by DEPOSIT, WITHDRAWAL, or TRANSFER
+- **By Date Range**: `?from=2024-01-01T00:00:00Z&to=2024-01-31T23:59:59Z`
+- **Combined**: Use any combination of filters together
+
+📖 **[Complete Filtering Documentation](docs/features/transaction-filtering/INDEX.md)**
 
 ---
 

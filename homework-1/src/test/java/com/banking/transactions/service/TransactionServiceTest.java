@@ -45,17 +45,11 @@ public class TransactionServiceTest {
 
     @Test
     public void testCreateTransaction_Success() {
-        Transaction savedTransaction = Transaction.builder()
-                .id("generated-id")
-                .fromAccount("ACC-12345")
-                .toAccount("ACC-67890")
-                .amount(new BigDecimal("100.50"))
-                .currency("USD")
-                .type(TransactionType.TRANSFER)
-                .status("completed")
-                .build();
-
-        when(repository.save(any(Transaction.class))).thenReturn(savedTransaction);
+        when(repository.save(any(Transaction.class))).thenAnswer(invocation -> {
+            Transaction arg = invocation.getArgument(0);
+            arg.setId("generated-id");
+            return arg;
+        });
 
         Transaction result = transactionService.createTransaction(sampleTransaction);
 

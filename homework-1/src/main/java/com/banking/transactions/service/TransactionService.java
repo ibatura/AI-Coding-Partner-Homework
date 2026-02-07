@@ -3,6 +3,7 @@ package com.banking.transactions.service;
 import com.banking.transactions.dto.AccountBalanceResponse;
 import com.banking.transactions.exception.ResourceNotFoundException;
 import com.banking.transactions.model.Transaction;
+import com.banking.transactions.model.TransactionType;
 import com.banking.transactions.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
 
@@ -46,5 +47,9 @@ public class TransactionService {
 
     public List<Transaction> getTransactionsByAccountId(String accountId) {
         return repository.findByAccountId(accountId);
+    }
+
+    public List<Transaction> getFilteredTransactions(String accountId, TransactionType type, Instant from, Instant to) {
+        return repository.findByFilters(accountId, type, from, to);
     }
 }
