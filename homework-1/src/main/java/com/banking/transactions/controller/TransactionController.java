@@ -2,6 +2,7 @@ package com.banking.transactions.controller;
 
 import com.banking.transactions.dto.AccountBalanceResponse;
 import com.banking.transactions.dto.AccountSummaryResponse;
+import com.banking.transactions.dto.InterestCalculationResponse;
 import com.banking.transactions.model.Transaction;
 import com.banking.transactions.model.TransactionType;
 import com.banking.transactions.service.TransactionService;
@@ -13,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 
@@ -84,5 +86,14 @@ public class TransactionController {
         return ResponseEntity.ok()
                 .headers(headers)
                 .body(csv);
+    }
+
+    @GetMapping("/accounts/{accountId}/interest")
+    public ResponseEntity<InterestCalculationResponse> calculateInterest(
+            @PathVariable String accountId,
+            @RequestParam BigDecimal rate,
+            @RequestParam Integer days) {
+        InterestCalculationResponse interest = transactionService.calculateInterest(accountId, rate, days);
+        return ResponseEntity.ok(interest);
     }
 }

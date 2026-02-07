@@ -2,6 +2,7 @@ package com.banking.transactions.service;
 
 import com.banking.transactions.dto.AccountBalanceResponse;
 import com.banking.transactions.dto.AccountSummaryResponse;
+import com.banking.transactions.dto.InterestCalculationResponse;
 import com.banking.transactions.exception.ResourceNotFoundException;
 import com.banking.transactions.model.Transaction;
 import com.banking.transactions.model.TransactionType;
@@ -9,6 +10,7 @@ import com.banking.transactions.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -132,5 +134,28 @@ public class TransactionService {
             return "\"" + field.replace("\"", "\"\"") + "\"";
         }
         return field;
+    }
+
+    public InterestCalculationResponse calculateInterest(String accountId, BigDecimal rate, Integer days) {
+        BigDecimal principal = repository.getAccountBalance(accountId);
+
+        // Simple Interest = Principal × Rate × (Days / 365)
+        BigDecimal daysInYear = new BigDecimal("365");
+        BigDecimal interest = principal
+                .multiply(rate)
+                .multiply(new BigDecimal(days))
+                .divide(daysInYear, 2, RoundingMode.HALF_UP);
+
+        BigDecimal finalBalance = principal.add(interest);
+
+        return InterestCalculationResponse.builder()
+                .accountId(accountId)
+                .principal(principal)
+                .rate(rate)
+                .days(days)
+                .interest(interest)
+                .finalBalance(finalBalance)
+                .currency("USD")
+                .build();
     }
 }
