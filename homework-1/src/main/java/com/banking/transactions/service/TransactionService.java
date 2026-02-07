@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TransactionService {
@@ -94,5 +95,42 @@ public class TransactionService {
                 .transactionCount(transactions.size())
                 .mostRecentTransactionDate(mostRecentDate)
                 .build();
+    }
+
+    public String exportTransactionsToCsv() {
+        List<Transaction> transactions = repository.findAll();
+
+        StringBuilder csv = new StringBuilder();
+        csv.append("id,fromAccount,toAccount,amount,currency,type,timestamp,status\n");
+
+        String rows = transactions.stream()
+                .map(this::transactionToCsvRow)
+                .collect(Collectors.joining("\n"));
+
+        csv.append(rows);
+        return csv.toString();
+    }
+
+    private String transactionToCsvRow(Transaction t) {
+        return String.join(",",
+                escapeCsvField(t.getId()),
+                escapeCsvField(t.getFromAccount()),
+                escapeCsvField(t.getToAccount()),
+                t.getAmount() != null ? t.getAmount().toString() : "",
+                escapeCsvField(t.getCurrency()),
+                t.getType() != null ? t.getType().name() : "",
+                t.getTimestamp() != null ? t.getTimestamp().toString() : "",
+                escapeCsvField(t.getStatus())
+        );
+    }
+
+    private String escapeCsvField(String field) {
+        if (field == null) {
+            return "";
+        }
+        if (field.contains(",") || field.contains("\"") || field.contains("\n")) {
+            return "\"" + field.replace("\"", "\"\"") + "\"";
+        }
+        return field;
     }
 }

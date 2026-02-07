@@ -7,7 +7,9 @@ import com.banking.transactions.model.TransactionType;
 import com.banking.transactions.service.TransactionService;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -65,5 +67,22 @@ public class TransactionController {
     public ResponseEntity<AccountSummaryResponse> getAccountSummary(@PathVariable String accountId) {
         AccountSummaryResponse summary = transactionService.getAccountSummary(accountId);
         return ResponseEntity.ok(summary);
+    }
+
+    @GetMapping("/transactions/export")
+    public ResponseEntity<String> exportTransactions(@RequestParam(defaultValue = "csv") String format) {
+        if (!"csv".equalsIgnoreCase(format)) {
+            return ResponseEntity.badRequest().body("Unsupported format: " + format + ". Supported formats: csv");
+        }
+
+        String csv = transactionService.exportTransactionsToCsv();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.parseMediaType("text/csv"));
+        headers.setContentDispositionFormData("attachment", "transactions.csv");
+
+        return ResponseEntity.ok()
+                .headers(headers)
+                .body(csv);
     }
 }
