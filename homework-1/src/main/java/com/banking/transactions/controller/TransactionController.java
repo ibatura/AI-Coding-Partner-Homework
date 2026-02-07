@@ -1,6 +1,7 @@
 package com.banking.transactions.controller;
 
 import com.banking.transactions.dto.AccountBalanceResponse;
+import com.banking.transactions.dto.AccountSummaryResponse;
 import com.banking.transactions.model.Transaction;
 import com.banking.transactions.model.TransactionType;
 import com.banking.transactions.service.TransactionService;
@@ -58,5 +59,11 @@ public class TransactionController {
     public ResponseEntity<AccountBalanceResponse> getAccountBalance(@PathVariable String accountId) {
         AccountBalanceResponse balance = transactionService.getAccountBalance(accountId);
         return ResponseEntity.ok(balance);
+    }
+
+    @GetMapping("/accounts/{accountId}/summary")
+    public ResponseEntity<AccountSummaryResponse> getAccountSummary(@PathVariable String accountId) {
+        AccountSummaryResponse summary = transactionService.getAccountSummary(accountId);
+        return ResponseEntity.ok(summary);
     }
 }
