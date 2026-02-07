@@ -141,7 +141,7 @@ GET /api/transactions?accountId=ACC-001&type=TRANSFER&from=2024-01-01T00:00:00Z&
 
 - [Main Project README](../../../README.md)
 - [Task Description](../../../homework-2/TASKS.md)
-- [Quick Start Guide](../../../QUICK_START.md)
+- [Quick Start Guide](../../QUICK_START.md)
 
 ## 📝 Navigation
 

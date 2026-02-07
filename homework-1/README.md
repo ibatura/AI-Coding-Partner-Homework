@@ -1,6 +1,17 @@
+**Author:** Ivan Batura
 # 🏦 Banking Transactions REST API
 
-A simple and clean REST API for managing banking transactions, built with **Java Spring Boot** and in-memory storage.
+A robust, enterprise-grade **RESTful API** designed for managing and auditing banking transactions. This application provides a high-performance solution for financial transaction management, built on the **Spring Boot 3** framework and **Java 17**.
+
+### 🌟 Overview
+This API serves as a foundation for banking systems, offering core functionalities to handle financial flows with precision. It manages the full lifecycle of transactions—from creation and validation to advanced querying and reporting. Designed with scalability and maintainability in mind, it utilizes a multi-layered architecture and thread-safe in-memory storage, making it ideal for high-concurrency environments and rapid development.
+
+### 💼 Core Business Capabilities
+- **Comprehensive Transaction Lifecycle**: Supports Deposits, Withdrawals, and multi-account Transfers with atomic-like consistency.
+- **Advanced Financial Intel**: Real-time balance tracking, account summaries, and automated interest calculation.
+- **Data Governance**: Strict input validation, global error handling, and CSV export capabilities for auditing and external analysis.
+- **Smart Query Engine**: Powerful filtering system to navigate transaction history by actors, types, and temporal ranges.
+
 
 ---
 
@@ -44,26 +55,11 @@ Filter transactions using query parameters:
 
 The application follows a **layered architecture** pattern:
 
-```
-┌─────────────────────────────────────────┐
-│          Controller Layer               │  ← REST endpoints
-│   (TransactionController.java)          │
-└────────────────┬────────────────────────┘
-                 │
-┌────────────────▼────────────────────────┐
-│          Service Layer                  │  ← Business logic
-│   (TransactionService.java)             │
-└────────────────┬────────────────────────┘
-                 │
-┌────────────────▼────────────────────────┐
-│         Repository Layer                │  ← Data access
-│   (TransactionRepository.java)          │
-└────────────────┬────────────────────────┘
-                 │
-┌────────────────▼────────────────────────┐
-│        In-Memory Storage                │  ← ConcurrentHashMap
-│   (transactions + accountBalances)      │
-└─────────────────────────────────────────┘
+```mermaid
+graph TD
+    Controller[Controller Layer<br/>TransactionController] --> Service[Service Layer<br/>TransactionService]
+    Service --> Repository[Repository Layer<br/>TransactionRepository]
+    Repository --> Storage[In-Memory Storage<br/>ConcurrentHashMap]
 ```
 
 ### Key Design Decisions
@@ -94,66 +90,20 @@ The application follows a **layered architecture** pattern:
 
 ```
 homework-1/
-├── build.gradle                     # Gradle build configuration
-├── settings.gradle                  # Gradle settings
-├── gradlew                          # Gradle wrapper (Unix)
-├── gradlew.bat                      # Gradle wrapper (Windows)
-├── gradle/wrapper/                  # Gradle wrapper files
-├── .gitignore                       # Git ignore rules
-├── README.md                        # This file
-├── HOWTORUN.md                      # Setup and run instructions
-│
-├── src/main/java/com/banking/transactions/
-│   ├── TransactionsApiApplication.java    # Main Spring Boot application
-│   │
-│   ├── controller/
-│   │   └── TransactionController.java     # REST API endpoints
-│   │
-│   ├── service/
-│   │   └── TransactionService.java        # Business logic
-│   │
-│   ├── repository/
-│   │   └── TransactionRepository.java     # Data access layer
-│   │
-│   ├── model/
-│   │   └── Transaction.java               # Transaction entity
-│   │
-│   ├── dto/
-│   │   ├── AccountBalanceResponse.java    # Balance response DTO
-│   │   └── ErrorResponse.java             # Error response DTO
-│   │
-│   └── exception/
-│       ├── ResourceNotFoundException.java # Custom exception
-│       └── GlobalExceptionHandler.java    # Exception handler
-│
-├── src/main/resources/
-│   └── application.properties       # Application configuration
-│
-├── src/test/java/                   # Unit tests
-│   └── com/banking/transactions/
-│       ├── TransactionsApiApplicationTest.java
-│       ├── controller/TransactionControllerTest.java
-│       ├── service/TransactionServiceTest.java
-│       └── repository/TransactionRepositoryTest.java
-│
-└── demo/
-    ├── run.sh                       # Script to run the application
-    ├── requests.sh                  # Sample API requests script
-    ├── test.sh                      # Script to run tests
-    ├── sample-requests.http         # HTTP requests (VS Code/IntelliJ)
-    └── sample-data/                 # Sample data files
-        ├── sample-data.json
-        ├── deposits.json
-        └── transfers.json
+├── src/main/java/      # Application source code (Controller, Service, Repository, Model, DTO)
+├── src/test/java/      # Unit and integration tests
+├── src/main/resources/ # Application configuration and properties
+├── demo/               # Sample scripts, request examples, and data files for testing
+├── docs/               # Detailed documentation, feature guides, and screenshots
+├── gradle/             # Gradle wrapper files
+└── build/              # Generated build artifacts and reports
 ```
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Java 17 or higher
-- Maven 3.6+
+For detailed setup and run instructions, see **[HOWTORUN.md](HOWTORUN.md)**.
 
 ### Run the Application
 
@@ -184,12 +134,15 @@ http://localhost:8080/api
 
 ### Endpoints
 
-| Method | Endpoint                           | Description                    |
-|--------|------------------------------------|--------------------------------|
-| POST   | `/transactions`                    | Create a new transaction       |
-| GET    | `/transactions`                    | Get all transactions           |
-| GET    | `/transactions/{id}`               | Get transaction by ID          |
-| GET    | `/accounts/{accountId}/balance`    | Get account balance            |
+| Method | Endpoint                           | Description                            |
+|--------|------------------------------------|----------------------------------------|
+| POST   | `/transactions`                    | Create a new transaction               |
+| GET    | `/transactions`                    | Get all transactions (supports filters)|
+| GET    | `/transactions/{id}`               | Get transaction by ID                  |
+| GET    | `/accounts/{accountId}/balance`    | Get account balance                    |
+| GET    | `/accounts/{accountId}/summary`    | Get account summary (totals)           |
+| GET    | `/transactions/export`             | Export transactions as CSV             |
+| GET    | `/accounts/{accountId}/interest`   | Calculate estimated interest           |
 
 ### Transaction Model
 
@@ -221,6 +174,8 @@ http://localhost:8080/api
 ---
 
 ## 🧪 Testing
+
+For detailed testing instructions and examples, see the **[Testing section in HOWTORUN.md](HOWTORUN.md#-test-the-api)**.
 
 ### Using the Test Script
 
@@ -293,66 +248,6 @@ open build/reports/tests/test/index.html
 
 ---
 
-## 📝 Example Request/Response
-
-### Create Transaction
-**Request:**
-```bash
-POST /api/transactions
-Content-Type: application/json
-
-{
-  "fromAccount": "ACC-12345",
-  "toAccount": "ACC-67890",
-  "amount": 100.50,
-  "currency": "USD",
-  "type": "TRANSFER"
-}
-```
-
-**Response (201 Created):**
-```json
-{
-  "id": "550e8400-e29b-41d4-a716-446655440000",
-  "fromAccount": "ACC-12345",
-  "toAccount": "ACC-67890",
-  "amount": 100.50,
-  "currency": "USD",
-  "type": "TRANSFER",
-  "timestamp": "2026-02-03T10:30:00Z",
-  "status": "completed"
-}
-```
-
-### Validation Error
-**Request:**
-```bash
-POST /api/transactions
-Content-Type: application/json
-
-{
-  "fromAccount": "ACC-12345",
-  "toAccount": "ACC-67890",
-  "amount": -100.00,
-  "currency": "USD",
-  "type": "TRANSFER"
-}
-```
-
-**Response (400 Bad Request):**
-```json
-{
-  "error": "Validation failed",
-  "details": [
-    {
-      "field": "amount",
-      "message": "amount must be positive"
-    }
-  ]
-}
-```
-
----
 
 ## 📄 License
 
