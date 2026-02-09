@@ -1,3 +1,6 @@
+---
+author: Ivan Batura
+---
 # Customer Support Ticket Management System
 
 A production-ready support ticket management system built with Python and Flask that provides intelligent ticket classification, multi-format data import capabilities, and comprehensive RESTful API endpoints.
