@@ -1,0 +1,224 @@
+{
+  "tickets": [
+    {
+      "customer_id": "CUST-001",
+      "customer_email": "alice@example.com",
+      "customer_name": "Alice Smith",
+      "subject": "Cannot login to account",
+      "description": "I have been unable to login to my account since yesterday morning. Password reset does not work either.",
+      "category": "account_access",
+      "priority": "high",
+      "tags": ["login", "password"],
+      "metadata": {"source": "web_form", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-002",
+      "customer_email": "bob@example.com",
+      "customer_name": "Bob Jones",
+      "subject": "Double charged for subscription",
+      "description": "My credit card was charged twice for the monthly subscription renewal on January 15th.",
+      "category": "billing_question",
+      "priority": "urgent",
+      "tags": ["billing", "payment", "overcharge"],
+      "metadata": {"source": "email", "device_type": "mobile"}
+    },
+    {
+      "customer_id": "CUST-003",
+      "customer_email": "carol@example.com",
+      "customer_name": "Carol White",
+      "subject": "App crashes on startup",
+      "description": "The application crashes immediately after opening on my Android phone with a white screen error.",
+      "category": "technical_issue",
+      "priority": "urgent",
+      "tags": ["crash", "mobile", "bug"],
+      "metadata": {"source": "web_form", "device_type": "mobile"}
+    },
+    {
+      "customer_id": "CUST-004",
+      "customer_email": "david@example.com",
+      "customer_name": "David Brown",
+      "subject": "Feature request for dark mode",
+      "description": "It would be great if you could add a dark mode option to the settings page for better nighttime usage.",
+      "category": "feature_request",
+      "priority": "low",
+      "tags": ["ui", "suggestion", "dark-mode"],
+      "metadata": {"source": "web_form", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-005",
+      "customer_email": "emma@example.com",
+      "customer_name": "Emma Davis",
+      "subject": "Unexpected behavior in search",
+      "description": "The search function returns unexpected results when using special characters. Steps to reproduce: type @# in search.",
+      "category": "bug_report",
+      "priority": "high",
+      "tags": ["search", "defect", "reproduce"],
+      "metadata": {"source": "api", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-006",
+      "customer_email": "frank@example.com",
+      "customer_name": "Frank Wilson",
+      "subject": "Two-factor authentication not working",
+      "description": "I enabled 2FA on my account but the verification codes are not being sent to my phone.",
+      "category": "account_access",
+      "priority": "urgent",
+      "tags": ["2fa", "authentication", "login"],
+      "metadata": {"source": "phone", "device_type": "mobile"}
+    },
+    {
+      "customer_id": "CUST-007",
+      "customer_email": "grace@example.com",
+      "customer_name": "Grace Taylor",
+      "subject": "Request refund for last payment",
+      "description": "I would like to request a refund for my last payment as the service was down for three days.",
+      "category": "billing_question",
+      "priority": "high",
+      "tags": ["refund", "payment"],
+      "metadata": {"source": "email", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-008",
+      "customer_email": "henry@example.com",
+      "customer_name": "Henry Martinez",
+      "subject": "Server error 500 on dashboard",
+      "description": "Getting a 500 server error every time I try to access the analytics dashboard page.",
+      "category": "technical_issue",
+      "priority": "high",
+      "tags": ["error", "500", "dashboard"],
+      "metadata": {"source": "web_form", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-009",
+      "customer_email": "ivy@example.com",
+      "customer_name": "Ivy Anderson",
+      "subject": "Add export to PDF feature",
+      "description": "Please add the ability to export reports to PDF format. This would be a nice enhancement.",
+      "category": "feature_request",
+      "priority": "low",
+      "tags": ["export", "pdf", "enhancement"],
+      "metadata": {"source": "chat", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-010",
+      "customer_email": "james@example.com",
+      "customer_name": "James Thomas",
+      "subject": "Regression in file upload",
+      "description": "File upload was working last week but now consistently fails with large files. This is a regression.",
+      "category": "bug_report",
+      "priority": "urgent",
+      "tags": ["upload", "regression", "file"],
+      "metadata": {"source": "api", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-011",
+      "customer_email": "kate@example.com",
+      "customer_name": "Kate Jackson",
+      "subject": "Account locked after password change",
+      "description": "My account got locked immediately after I changed my password. Cannot access any features now.",
+      "category": "account_access",
+      "priority": "urgent",
+      "tags": ["locked", "password", "access"],
+      "metadata": {"source": "web_form", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-012",
+      "customer_email": "leo@example.com",
+      "customer_name": "Leo Harris",
+      "subject": "Invoice not showing correct amount",
+      "description": "The invoice for February shows an incorrect amount that does not match my subscription plan.",
+      "category": "billing_question",
+      "priority": "medium",
+      "tags": ["invoice", "billing", "amount"],
+      "metadata": {"source": "email", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-013",
+      "customer_email": "mia@example.com",
+      "customer_name": "Mia Clark",
+      "subject": "Page loads very slowly",
+      "description": "The main dashboard page takes over 30 seconds to load. Everything is very slow and unresponsive.",
+      "category": "technical_issue",
+      "priority": "high",
+      "tags": ["slow", "performance", "timeout"],
+      "metadata": {"source": "web_form", "device_type": "mobile"}
+    },
+    {
+      "customer_id": "CUST-014",
+      "customer_email": "noah@example.com",
+      "customer_name": "Noah Lewis",
+      "subject": "Suggestion for mobile notifications",
+      "description": "I wish the app would support push notifications on mobile devices for important updates.",
+      "category": "feature_request",
+      "priority": "low",
+      "tags": ["notifications", "mobile", "suggestion"],
+      "metadata": {"source": "chat", "device_type": "mobile"}
+    },
+    {
+      "customer_id": "CUST-015",
+      "customer_email": "olivia@example.com",
+      "customer_name": "Olivia Robinson",
+      "subject": "Stack trace in payment module",
+      "description": "Encountered a stack trace error in the payment processing module during checkout consistently.",
+      "category": "bug_report",
+      "priority": "high",
+      "tags": ["payment", "stack-trace", "defect"],
+      "metadata": {"source": "api", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-016",
+      "customer_email": "peter@example.com",
+      "customer_name": "Peter Walker",
+      "subject": "Cannot access shared documents",
+      "description": "I cannot access the shared documents folder. I get an access denied error every time.",
+      "category": "account_access",
+      "priority": "high",
+      "tags": ["access", "documents", "denied"],
+      "metadata": {"source": "web_form", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-017",
+      "customer_email": "quinn@example.com",
+      "customer_name": "Quinn Hall",
+      "subject": "Cancel subscription request",
+      "description": "I need to cancel my subscription and get a prorated refund for the remaining billing period.",
+      "category": "billing_question",
+      "priority": "medium",
+      "tags": ["cancel", "subscription", "refund"],
+      "metadata": {"source": "email", "device_type": "mobile"}
+    },
+    {
+      "customer_id": "CUST-018",
+      "customer_email": "rachel@example.com",
+      "customer_name": "Rachel Allen",
+      "subject": "Application freeze during save",
+      "description": "The application freezes completely when trying to save large documents. Have to force quit every time.",
+      "category": "technical_issue",
+      "priority": "high",
+      "tags": ["freeze", "save", "hang"],
+      "metadata": {"source": "web_form", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-019",
+      "customer_email": "sam@example.com",
+      "customer_name": "Sam Young",
+      "subject": "Could you add bulk import feature",
+      "description": "Could you add the ability to bulk import data from spreadsheets? This would improve workflow significantly.",
+      "category": "feature_request",
+      "priority": "medium",
+      "tags": ["import", "bulk", "enhancement"],
+      "metadata": {"source": "chat", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-020",
+      "customer_email": "tara@example.com",
+      "customer_name": "Tara King",
+      "subject": "Intermittent failure in notifications",
+      "description": "The notification system has intermittent failures where alerts are not delivered to users reliably.",
+      "category": "bug_report",
+      "priority": "high",
+      "tags": ["notifications", "intermittent", "failure"],
+      "metadata": {"source": "api", "device_type": "desktop"}
+    }
+  ]
+}
