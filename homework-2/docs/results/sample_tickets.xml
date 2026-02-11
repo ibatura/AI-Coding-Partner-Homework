@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>CUST-001</customer_id>
+    <customer_email>alice@example.com</customer_email>
+    <customer_name>Alice Smith</customer_name>
+    <subject>Cannot login to account</subject>
+    <description>I have been unable to login to my account since yesterday morning. Password reset does not work either.</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <tags>
+      <tag>login</tag>
+      <tag>password</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-002</customer_id>
+    <customer_email>bob@example.com</customer_email>
+    <customer_name>Bob Jones</customer_name>
+    <subject>Double charged for subscription</subject>
+    <description>My credit card was charged twice for the monthly subscription renewal on January 15th.</description>
+    <category>billing_question</category>
+    <priority>urgent</priority>
+    <tags>
+      <tag>billing</tag>
+      <tag>payment</tag>
+      <tag>overcharge</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-003</customer_id>
+    <customer_email>carol@example.com</customer_email>
+    <customer_name>Carol White</customer_name>
+    <subject>App crashes on startup</subject>
+    <description>The application crashes immediately after opening on my Android phone with a white screen error.</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <tags>
+      <tag>crash</tag>
+      <tag>mobile</tag>
+      <tag>bug</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-004</customer_id>
+    <customer_email>david@example.com</customer_email>
+    <customer_name>David Brown</customer_name>
+    <subject>Feature request for dark mode</subject>
+    <description>It would be great if you could add a dark mode option to the settings page for better nighttime usage.</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <tags>
+      <tag>ui</tag>
+      <tag>suggestion</tag>
+      <tag>dark-mode</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-005</customer_id>
+    <customer_email>emma@example.com</customer_email>
+    <customer_name>Emma Davis</customer_name>
+    <subject>Unexpected behavior in search</subject>
+    <description>The search function returns unexpected results when using special characters. Steps to reproduce: type @# in search.</description>
+    <category>bug_report</category>
+    <priority>high</priority>
+    <tags>
+      <tag>search</tag>
+      <tag>defect</tag>
+      <tag>reproduce</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-006</customer_id>
+    <customer_email>frank@example.com</customer_email>
+    <customer_name>Frank Wilson</customer_name>
+    <subject>Two-factor authentication not working</subject>
+    <description>I enabled 2FA on my account but the verification codes are not being sent to my phone.</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <tags>
+      <tag>2fa</tag>
+      <tag>authentication</tag>
+      <tag>login</tag>
+    </tags>
+    <metadata>
+      <source>phone</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-007</customer_id>
+    <customer_email>grace@example.com</customer_email>
+    <customer_name>Grace Taylor</customer_name>
+    <subject>Request refund for last payment</subject>
+    <description>I would like to request a refund for my last payment as the service was down for three days.</description>
+    <category>billing_question</category>
+    <priority>high</priority>
+    <tags>
+      <tag>refund</tag>
+      <tag>payment</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-008</customer_id>
+    <customer_email>henry@example.com</customer_email>
+    <customer_name>Henry Martinez</customer_name>
+    <subject>Server error 500 on dashboard</subject>
+    <description>Getting a 500 server error every time I try to access the analytics dashboard page.</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <tags>
+      <tag>error</tag>
+      <tag>500</tag>
+      <tag>dashboard</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-009</customer_id>
+    <customer_email>ivy@example.com</customer_email>
+    <customer_name>Ivy Anderson</customer_name>
+    <subject>Add export to PDF feature</subject>
+    <description>Please add the ability to export reports to PDF format. This would be a nice enhancement.</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <tags>
+      <tag>export</tag>
+      <tag>pdf</tag>
+      <tag>enhancement</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-010</customer_id>
+    <customer_email>james@example.com</customer_email>
+    <customer_name>James Thomas</customer_name>
+    <subject>Regression in file upload</subject>
+    <description>File upload was working last week but now consistently fails with large files. This is a regression.</description>
+    <category>bug_report</category>
+    <priority>urgent</priority>
+    <tags>
+      <tag>upload</tag>
+      <tag>regression</tag>
+      <tag>file</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-011</customer_id>
+    <customer_email>kate@example.com</customer_email>
+    <customer_name>Kate Jackson</customer_name>
+    <subject>Account locked after password change</subject>
+    <description>My account got locked immediately after I changed my password. Cannot access any features now.</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <tags>
+      <tag>locked</tag>
+      <tag>password</tag>
+      <tag>access</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-012</customer_id>
+    <customer_email>leo@example.com</customer_email>
+    <customer_name>Leo Harris</customer_name>
+    <subject>Invoice not showing correct amount</subject>
+    <description>The invoice for February shows an incorrect amount that does not match my subscription plan.</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>invoice</tag>
+      <tag>billing</tag>
+      <tag>amount</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-013</customer_id>
+    <customer_email>mia@example.com</customer_email>
+    <customer_name>Mia Clark</customer_name>
+    <subject>Page loads very slowly</subject>
+    <description>The main dashboard page takes over 30 seconds to load. Everything is very slow and unresponsive.</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <tags>
+      <tag>slow</tag>
+      <tag>performance</tag>
+      <tag>timeout</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-014</customer_id>
+    <customer_email>noah@example.com</customer_email>
+    <customer_name>Noah Lewis</customer_name>
+    <subject>Suggestion for mobile notifications</subject>
+    <description>I wish the app would support push notifications on mobile devices for important updates.</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <tags>
+      <tag>notifications</tag>
+      <tag>mobile</tag>
+      <tag>suggestion</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-015</customer_id>
+    <customer_email>olivia@example.com</customer_email>
+    <customer_name>Olivia Robinson</customer_name>
+    <subject>Stack trace in payment module</subject>
+    <description>Encountered a stack trace error in the payment processing module during checkout consistently.</description>
+    <category>bug_report</category>
+    <priority>high</priority>
+    <tags>
+      <tag>payment</tag>
+      <tag>stack-trace</tag>
+      <tag>defect</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-016</customer_id>
+    <customer_email>peter@example.com</customer_email>
+    <customer_name>Peter Walker</customer_name>
+    <subject>Cannot access shared documents</subject>
+    <description>I cannot access the shared documents folder. I get an access denied error every time I try.</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <tags>
+      <tag>access</tag>
+      <tag>documents</tag>
+      <tag>denied</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-017</customer_id>
+    <customer_email>quinn@example.com</customer_email>
+    <customer_name>Quinn Hall</customer_name>
+    <subject>Cancel subscription request</subject>
+    <description>I need to cancel my subscription and get a prorated refund for the remaining billing period.</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>cancel</tag>
+      <tag>subscription</tag>
+      <tag>refund</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-018</customer_id>
+    <customer_email>rachel@example.com</customer_email>
+    <customer_name>Rachel Allen</customer_name>
+    <subject>Application freeze during save</subject>
+    <description>The application freezes completely when trying to save large documents. Have to force quit every time.</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <tags>
+      <tag>freeze</tag>
+      <tag>save</tag>
+      <tag>hang</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-019</customer_id>
+    <customer_email>sam@example.com</customer_email>
+    <customer_name>Sam Young</customer_name>
+    <subject>Could you add bulk import feature</subject>
+    <description>Could you add the ability to bulk import data from spreadsheets? This would improve workflow significantly.</description>
+    <category>feature_request</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>import</tag>
+      <tag>bulk</tag>
+      <tag>enhancement</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-020</customer_id>
+    <customer_email>tara@example.com</customer_email>
+    <customer_name>Tara King</customer_name>
+    <subject>Intermittent failure in notifications</subject>
+    <description>The notification system has intermittent failures where alerts are not delivered to users reliably.</description>
+    <category>bug_report</category>
+    <priority>high</priority>
+    <tags>
+      <tag>notifications</tag>
+      <tag>intermittent</tag>
+      <tag>failure</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-021</customer_id>
+    <customer_email>uma@example.com</customer_email>
+    <customer_name>Uma Wright</customer_name>
+    <subject>Sign in page broken on Safari</subject>
+    <description>The sign in page does not render correctly on Safari browser. Login button is not clickable.</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <tags>
+      <tag>login</tag>
+      <tag>safari</tag>
+      <tag>browser</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-022</customer_id>
+    <customer_email>victor@example.com</customer_email>
+    <customer_name>Victor Lopez</customer_name>
+    <subject>Upgrade plan pricing question</subject>
+    <description>I want to understand the pricing difference between the basic and premium plans before upgrading.</description>
+    <category>billing_question</category>
+    <priority>low</priority>
+    <tags>
+      <tag>pricing</tag>
+      <tag>upgrade</tag>
+      <tag>plan</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-023</customer_id>
+    <customer_email>wendy@example.com</customer_email>
+    <customer_name>Wendy Hill</customer_name>
+    <subject>Error when generating reports</subject>
+    <description>Getting an error exception when trying to generate monthly reports from the analytics section.</description>
+    <category>technical_issue</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>error</tag>
+      <tag>reports</tag>
+      <tag>exception</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-024</customer_id>
+    <customer_email>xander@example.com</customer_email>
+    <customer_name>Xander Scott</customer_name>
+    <subject>New feature for team collaboration</subject>
+    <description>I would like to request a new feature for real-time team collaboration on shared documents.</description>
+    <category>feature_request</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>collaboration</tag>
+      <tag>team</tag>
+      <tag>feature</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-025</customer_id>
+    <customer_email>yara@example.com</customer_email>
+    <customer_name>Yara Green</customer_name>
+    <subject>Defect in user profile page</subject>
+    <description>There is a defect on the user profile page where the avatar image does not save properly.</description>
+    <category>bug_report</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>profile</tag>
+      <tag>defect</tag>
+      <tag>avatar</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-026</customer_id>
+    <customer_email>zach@example.com</customer_email>
+    <customer_name>Zach Adams</customer_name>
+    <subject>Reset password link expired</subject>
+    <description>The reset password link I received expires before I can use it. The link is only valid for 5 minutes.</description>
+    <category>account_access</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>password</tag>
+      <tag>reset</tag>
+      <tag>expired</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-027</customer_id>
+    <customer_email>amy@example.com</customer_email>
+    <customer_name>Amy Nelson</customer_name>
+    <subject>Receipt not received for purchase</subject>
+    <description>I made a purchase three days ago but never received the email receipt for my records.</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>receipt</tag>
+      <tag>purchase</tag>
+      <tag>email</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-028</customer_id>
+    <customer_email>brian@example.com</customer_email>
+    <customer_name>Brian Carter</customer_name>
+    <subject>Blank page after login</subject>
+    <description>After successfully logging in I see a blank page instead of the dashboard. Nothing loads at all.</description>
+    <category>technical_issue</category>
+    <priority>urgent</priority>
+    <tags>
+      <tag>blank</tag>
+      <tag>login</tag>
+      <tag>broken</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-029</customer_id>
+    <customer_email>clara@example.com</customer_email>
+    <customer_name>Clara Mitchell</customer_name>
+    <subject>Please add API rate limit dashboard</subject>
+    <description>Please add a dashboard to monitor API rate limits and usage statistics in real time.</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <tags>
+      <tag>api</tag>
+      <tag>dashboard</tag>
+      <tag>suggestion</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-030</customer_id>
+    <customer_email>derek@example.com</customer_email>
+    <customer_name>Derek Perez</customer_name>
+    <subject>Steps to reproduce payment bug</subject>
+    <description>I can reproduce a bug in the payment flow. Steps: add item to cart then change quantity to zero.</description>
+    <category>bug_report</category>
+    <priority>high</priority>
+    <tags>
+      <tag>payment</tag>
+      <tag>reproduce</tag>
+      <tag>steps</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+</tickets>

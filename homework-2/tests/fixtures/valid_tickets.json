@@ -1,0 +1,26 @@
+{
+  "tickets": [
+    {
+      "customer_id": "CUST-001",
+      "customer_email": "alice@example.com",
+      "customer_name": "Alice Smith",
+      "subject": "Cannot login",
+      "description": "I cannot login to my account since yesterday morning",
+      "category": "account_access",
+      "priority": "high",
+      "tags": ["login", "account"],
+      "metadata": {"source": "web_form", "device_type": "desktop"}
+    },
+    {
+      "customer_id": "CUST-002",
+      "customer_email": "bob@example.com",
+      "customer_name": "Bob Jones",
+      "subject": "Payment issue",
+      "description": "My payment was charged twice on my credit card",
+      "category": "billing_question",
+      "priority": "medium",
+      "tags": ["billing"],
+      "metadata": {"source": "email"}
+    }
+  ]
+}
