@@ -1,0 +1,16 @@
+[
+  {
+    "fromAccount": "ACC-ALICE",
+    "toAccount": "ACC-BOB",
+    "amount": 500.00,
+    "currency": "USD",
+    "type": "TRANSFER"
+  },
+  {
+    "fromAccount": "ACC-BOB",
+    "toAccount": "ACC-CHARLIE",
+    "amount": 300.00,
+    "currency": "USD",
+    "type": "TRANSFER"
+  }
+]

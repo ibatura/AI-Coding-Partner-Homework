@@ -1,0 +1,99 @@
+package com.banking.transactions.controller;
+
+import com.banking.transactions.dto.AccountBalanceResponse;
+import com.banking.transactions.dto.AccountSummaryResponse;
+import com.banking.transactions.dto.InterestCalculationResponse;
+import com.banking.transactions.model.Transaction;
+import com.banking.transactions.model.TransactionType;
+import com.banking.transactions.service.TransactionService;
+import jakarta.validation.Valid;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+public class TransactionController {
+
+    private final TransactionService transactionService;
+
+    public TransactionController(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
+
+    @PostMapping("/transactions")
+    public ResponseEntity<Transaction> createTransaction(@Valid @RequestBody Transaction transaction) {
+        Transaction created = transactionService.createTransaction(transaction);
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+    }
+
+    @GetMapping("/transactions")
+    public ResponseEntity<List<Transaction>> getAllTransactions(
+            @RequestParam(required = false) String accountId,
+            @RequestParam(required = false) TransactionType type,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant from,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant to
+    ) {
+        List<Transaction> transactions;
+
+        // If any filter is provided, use filtered search
+        if (accountId != null || type != null || from != null || to != null) {
+            transactions = transactionService.getFilteredTransactions(accountId, type, from, to);
+        } else {
+            transactions = transactionService.getAllTransactions();
+        }
+
+        return ResponseEntity.ok(transactions);
+    }
+
+    @GetMapping("/transactions/{id}")
+    public ResponseEntity<Transaction> getTransactionById(@PathVariable String id) {
+        Transaction transaction = transactionService.getTransactionById(id);
+        return ResponseEntity.ok(transaction);
+    }
+
+    @GetMapping("/accounts/{accountId}/balance")
+    public ResponseEntity<AccountBalanceResponse> getAccountBalance(@PathVariable String accountId) {
+        AccountBalanceResponse balance = transactionService.getAccountBalance(accountId);
+        return ResponseEntity.ok(balance);
+    }
+
+    @GetMapping("/accounts/{accountId}/summary")
+    public ResponseEntity<AccountSummaryResponse> getAccountSummary(@PathVariable String accountId) {
+        AccountSummaryResponse summary = transactionService.getAccountSummary(accountId);
+        return ResponseEntity.ok(summary);
+    }
+
+    @GetMapping("/transactions/export")
+    public ResponseEntity<String> exportTransactions(@RequestParam(defaultValue = "csv") String format) {
+        if (!"csv".equalsIgnoreCase(format)) {
+            return ResponseEntity.badRequest().body("Unsupported format: " + format + ". Supported formats: csv");
+        }
+
+        String csv = transactionService.exportTransactionsToCsv();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.parseMediaType("text/csv"));
+        headers.setContentDispositionFormData("attachment", "transactions.csv");
+
+        return ResponseEntity.ok()
+                .headers(headers)
+                .body(csv);
+    }
+
+    @GetMapping("/accounts/{accountId}/interest")
+    public ResponseEntity<InterestCalculationResponse> calculateInterest(
+            @PathVariable String accountId,
+            @RequestParam BigDecimal rate,
+            @RequestParam Integer days) {
+        InterestCalculationResponse interest = transactionService.calculateInterest(accountId, rate, days);
+        return ResponseEntity.ok(interest);
+    }
+}
