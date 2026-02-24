@@ -1,0 +1,12 @@
+### Task: Bug Implementer (mean fix bug)
+Create a bug implementer agent.
+
+**File**: `agents/bug-implementer.agent.md`
+**Role**: Executes implementation plan and documents changes.
+
+**Responsibilities**: Read `implementation-plan.md`; apply changes as specified; run tests after each change; output `fix-summary.md`.
+
+**Process**: (1) Read plan — files, before/after code, test command. (2) Apply changes per file. (3) Run tests; if fail, document and stop. (4) Write fix-summary.md: Changes Made (file, location, before/after, test result), Overall Status, Manual Verification, References.
+
+**Success criteria**: Plan read fully; changes match plan; tests run; fix summary complete; manual verification steps clear.
+

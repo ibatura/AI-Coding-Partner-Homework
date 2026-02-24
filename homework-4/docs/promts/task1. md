@@ -1,0 +1,12 @@
+### Task: Bug Research Verifier
+Create subagent that verifies Bug Researcher output.
+
+**Role**: Fact-checker for Bug Researcher output.
+
+**Responsibilities**: Read `research/codebase-research.md`; verify every file:line reference and that snippets match source;
+**create result file** `research/verified-research.md` stating **research quality** in a format **defined by a skill**. document discrepancies.
+
+**File result**: `agents/research-verifier.agent.md`
+**Work folder**: use project folder for agent files.
+Avoid use direct skill call in agent code. Try to use description of skill instead that agent could understand to use skill.
+
