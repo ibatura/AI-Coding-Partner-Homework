@@ -1,0 +1,164 @@
+### Transaction Filtering Examples
+### Base URL
+@baseUrl = http://localhost:8080/api
+
+### Variables
+@accountId = ACC-12345
+@fromDate = 2024-01-01T00:00:00Z
+@toDate = 2024-01-31T23:59:59Z
+
+###############################################
+# Setup: Create Test Transactions
+###############################################
+
+### Create Transfer Transaction 1
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-001",
+  "toAccount": "ACC-002",
+  "amount": 100.00,
+  "currency": "USD",
+  "type": "TRANSFER"
+}
+
+### Create Transfer Transaction 2
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-001",
+  "toAccount": "ACC-003",
+  "amount": 50.00,
+  "currency": "USD",
+  "type": "TRANSFER"
+}
+
+### Create Deposit Transaction
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-002",
+  "toAccount": "ACC-004",
+  "amount": 200.00,
+  "currency": "USD",
+  "type": "DEPOSIT"
+}
+
+### Create Withdrawal Transaction
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-003",
+  "toAccount": "ACC-005",
+  "amount": 75.00,
+  "currency": "USD",
+  "type": "WITHDRAWAL"
+}
+
+###############################################
+# Basic Filtering Examples
+###############################################
+
+### 1. Get All Transactions (No Filters)
+GET {{baseUrl}}/transactions
+Accept: application/json
+
+### 2. Filter by Account ID
+GET {{baseUrl}}/transactions?accountId=ACC-001
+Accept: application/json
+
+### 3. Filter by Type - Transfer
+GET {{baseUrl}}/transactions?type=TRANSFER
+Accept: application/json
+
+### 4. Filter by Type - Deposit
+GET {{baseUrl}}/transactions?type=DEPOSIT
+Accept: application/json
+
+### 5. Filter by Type - Withdrawal
+GET {{baseUrl}}/transactions?type=WITHDRAWAL
+Accept: application/json
+
+###############################################
+# Date Range Filtering
+###############################################
+
+### 6. Filter by Date - From Specific Date
+GET {{baseUrl}}/transactions?from={{fromDate}}
+Accept: application/json
+
+### 7. Filter by Date - To Specific Date
+GET {{baseUrl}}/transactions?to={{toDate}}
+Accept: application/json
+
+### 8. Filter by Date Range
+GET {{baseUrl}}/transactions?from={{fromDate}}&to={{toDate}}
+Accept: application/json
+
+###############################################
+# Combined Filters
+###############################################
+
+### 9. Account + Type
+GET {{baseUrl}}/transactions?accountId=ACC-001&type=TRANSFER
+Accept: application/json
+
+### 10. Account + Date Range
+GET {{baseUrl}}/transactions?accountId=ACC-001&from={{fromDate}}&to={{toDate}}
+Accept: application/json
+
+### 11. Type + Date Range
+GET {{baseUrl}}/transactions?type=TRANSFER&from={{fromDate}}&to={{toDate}}
+Accept: application/json
+
+### 12. All Filters Combined
+GET {{baseUrl}}/transactions?accountId=ACC-001&type=TRANSFER&from={{fromDate}}&to={{toDate}}
+Accept: application/json
+
+###############################################
+# Edge Cases
+###############################################
+
+### 13. Non-existent Account (Empty Result)
+GET {{baseUrl}}/transactions?accountId=ACC-999
+Accept: application/json
+
+### 14. Future Date Range (Empty Result)
+GET {{baseUrl}}/transactions?from=2025-01-01T00:00:00Z&to=2025-12-31T23:59:59Z
+Accept: application/json
+
+### 15. Account that is Both Sender and Receiver
+GET {{baseUrl}}/transactions?accountId=ACC-002
+Accept: application/json
+
+###############################################
+# Error Cases
+###############################################
+
+### 16. Invalid Transaction Type
+GET {{baseUrl}}/transactions?type=INVALID_TYPE
+Accept: application/json
+
+### 17. Invalid Date Format
+GET {{baseUrl}}/transactions?from=invalid-date
+Accept: application/json
+
+###############################################
+# Real-world Use Cases
+###############################################
+
+### 18. Monthly Statement for Account
+GET {{baseUrl}}/transactions?accountId=ACC-001&from=2024-01-01T00:00:00Z&to=2024-01-31T23:59:59Z
+Accept: application/json
+
+### 19. Recent Transfers (Last 7 Days)
+GET {{baseUrl}}/transactions?type=TRANSFER&from=2024-01-24T00:00:00Z
+Accept: application/json
+
+### 20. All Deposits This Month
+GET {{baseUrl}}/transactions?type=DEPOSIT&from=2024-01-01T00:00:00Z&to=2024-01-31T23:59:59Z
+Accept: application/json
