@@ -1,0 +1,11 @@
+{
+	"hooks": {
+		"UserPromptSubmit": [
+			{
+				"type": "command",
+				"command": "echo 'User Prompt Submitted: {{.Prompt}}' >> /tmp/user_prompts.log"
+			}
+			
+		]
+	}
+}
