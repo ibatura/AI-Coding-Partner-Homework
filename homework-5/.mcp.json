@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "lorem-ipsum-server": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "custom-mcp-server/server.py"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/i.batura/Projects/mine/AI-Coding-Partner-Homework"
+      ]
+    },
+    "github": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "mcp-server-github"
+      ],
+      "env": {
+        "GITHUB_TOKEN": ""
+      }
+    },
+    "lorem-ipsum-server": {
+      "type": "stdio",
+      "command": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+      "args": ["/Users/i.batura/Projects/mine/AI-Coding-Partner-Homework/homework-5/custom-mcp-server/server.py"]
+    }
+  }
+}
