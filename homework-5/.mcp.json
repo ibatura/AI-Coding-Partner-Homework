@@ -26,6 +26,10 @@
         "GITHUB_TOKEN": ""
       }
     },
+    "atlassian": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"]
+    },
     "lorem-ipsum-server": {
       "type": "stdio",
       "command": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
