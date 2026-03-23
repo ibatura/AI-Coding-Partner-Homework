@@ -1,0 +1,41 @@
+{
+  "message_id": "29739e0e-f009-4487-a18f-e9b86e88c3db",
+  "timestamp": "2026-03-23T21:29:30.501809+00:00",
+  "source_agent": "settlement_processor",
+  "target_agent": "",
+  "message_type": "result",
+  "data": {
+    "transaction_id": "TXN004",
+    "timestamp": "2026-03-16T02:47:00Z",
+    "source_account": "ACC-1004",
+    "destination_account": "ACC-5500",
+    "amount": "500.00",
+    "currency": "EUR",
+    "transaction_type": "transfer",
+    "description": "Invoice #4471",
+    "metadata": {
+      "channel": "api",
+      "country": "DE"
+    },
+    "status": "validated",
+    "validated_at": "2026-03-23T21:29:30.493298+00:00",
+    "validated_by": "transaction_validator",
+    "fraud_risk_score": 3,
+    "fraud_risk_level": "MEDIUM",
+    "fraud_flags": [
+      "UNUSUAL_HOUR",
+      "CROSS_BORDER"
+    ],
+    "fraud_checked_at": "2026-03-23T21:29:30.498534+00:00",
+    "fraud_checked_by": "fraud_detector",
+    "unusual_hour": true,
+    "cross_border": true,
+    "settlement_status": "settled_with_review",
+    "settlement_id": "STL-f73fc425",
+    "settlement_fee": "0.50",
+    "net_amount": "499.50",
+    "settled_at": "2026-03-23T21:29:30.501778+00:00",
+    "settled_by": "settlement_processor",
+    "pipeline_complete": true
+  }
+}

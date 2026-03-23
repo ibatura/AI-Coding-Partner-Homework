@@ -1,0 +1,38 @@
+{
+  "message_id": "12f9e725-ad06-4dbc-bdd1-950abd41ad58",
+  "timestamp": "2026-03-23T21:29:30.500842+00:00",
+  "source_agent": "settlement_processor",
+  "target_agent": "",
+  "message_type": "result",
+  "data": {
+    "transaction_id": "TXN003",
+    "timestamp": "2026-03-16T09:30:00Z",
+    "source_account": "ACC-1003",
+    "destination_account": "ACC-9999",
+    "amount": "9999.99",
+    "currency": "USD",
+    "transaction_type": "transfer",
+    "description": "Consulting payment",
+    "metadata": {
+      "channel": "online",
+      "country": "US"
+    },
+    "status": "validated",
+    "validated_at": "2026-03-23T21:29:30.494692+00:00",
+    "validated_by": "transaction_validator",
+    "fraud_risk_score": 0,
+    "fraud_risk_level": "LOW",
+    "fraud_flags": [],
+    "fraud_checked_at": "2026-03-23T21:29:30.498056+00:00",
+    "fraud_checked_by": "fraud_detector",
+    "unusual_hour": false,
+    "cross_border": false,
+    "settlement_status": "settled",
+    "settlement_id": "STL-54db13b6",
+    "settlement_fee": "10.00",
+    "net_amount": "9989.99",
+    "settled_at": "2026-03-23T21:29:30.500769+00:00",
+    "settled_by": "settlement_processor",
+    "pipeline_complete": true
+  }
+}

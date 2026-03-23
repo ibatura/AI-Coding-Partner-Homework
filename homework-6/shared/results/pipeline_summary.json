@@ -1,0 +1,93 @@
+{
+  "run_id": "15275e52-af0d-45a9-807c-2584e5f36031",
+  "completed_at": "2026-03-23T21:29:30.502614+00:00",
+  "total_transactions": 8,
+  "settled": 3,
+  "settled_with_review": 2,
+  "held_for_review": 1,
+  "rejected": 2,
+  "total_fees_collected": "40.20",
+  "total_volume_processed": "115299.99",
+  "transactions": [
+    {
+      "transaction_id": "TXN002",
+      "amount": "25000.00",
+      "currency": "USD",
+      "status": "settled_with_review",
+      "settlement_id": "STL-682d4707",
+      "settlement_fee": "25.00",
+      "net_amount": "24975.00",
+      "fraud_risk_level": "MEDIUM"
+    },
+    {
+      "transaction_id": "TXN001",
+      "amount": "1500.00",
+      "currency": "USD",
+      "status": "settled",
+      "settlement_id": "STL-71c0417c",
+      "settlement_fee": "1.50",
+      "net_amount": "1498.50",
+      "fraud_risk_level": "LOW"
+    },
+    {
+      "transaction_id": "TXN007",
+      "amount": "-100.00",
+      "currency": "GBP",
+      "status": "rejected",
+      "settlement_id": null,
+      "settlement_fee": "0.00",
+      "net_amount": null,
+      "fraud_risk_level": null
+    },
+    {
+      "transaction_id": "TXN008",
+      "amount": "3200.00",
+      "currency": "USD",
+      "status": "settled",
+      "settlement_id": "STL-58208b4e",
+      "settlement_fee": "3.20",
+      "net_amount": "3196.80",
+      "fraud_risk_level": "LOW"
+    },
+    {
+      "transaction_id": "TXN004",
+      "amount": "500.00",
+      "currency": "EUR",
+      "status": "settled_with_review",
+      "settlement_id": "STL-f73fc425",
+      "settlement_fee": "0.50",
+      "net_amount": "499.50",
+      "fraud_risk_level": "MEDIUM"
+    },
+    {
+      "transaction_id": "TXN003",
+      "amount": "9999.99",
+      "currency": "USD",
+      "status": "settled",
+      "settlement_id": "STL-54db13b6",
+      "settlement_fee": "10.00",
+      "net_amount": "9989.99",
+      "fraud_risk_level": "LOW"
+    },
+    {
+      "transaction_id": "TXN006",
+      "amount": "200.00",
+      "currency": "XYZ",
+      "status": "rejected",
+      "settlement_id": null,
+      "settlement_fee": "0.00",
+      "net_amount": null,
+      "fraud_risk_level": null
+    },
+    {
+      "transaction_id": "TXN005",
+      "amount": "75000.00",
+      "currency": "USD",
+      "status": "held_for_review",
+      "settlement_id": null,
+      "settlement_fee": "0.00",
+      "net_amount": "75000.00",
+      "fraud_risk_level": "HIGH"
+    }
+  ]
+}
