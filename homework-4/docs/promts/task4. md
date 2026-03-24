@@ -1,0 +1,12 @@
+### Task: Unit Test Generator
+
+**File**: `agents/unit-test-generator.agent.md`  
+**Role**: Generate and run unit tests for changed code.
+
+**Responsibilities**: Read `fix-summary.md` and changed files; generate tests for new/changed code only; follow project test framework and **FIRST**; run tests; output `test-report.md`.
+
+**Success criteria**: FIRST skill created and used; tests only for changed code; FIRST satisfied; tests run and recorded; test-report and test files submitted.
+
+Limitation: do not add any FISRT principals to the agnet, as there is a skill what could be used instead.
+
+

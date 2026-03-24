@@ -1,0 +1,9 @@
+### Task 3: Security Vulnerabilities Verifier
+Create subagent that verifies Security Vulnerabilities Verifier and create a report.
+**File**: `agents/security-verifier.agent.md`
+**Role**: Security review of modified code.
+
+**Responsibilities**: Read `fix-summary.md` and changed files; scan for injection, hardcoded secrets, insecure comparisons, missing validation, unsafe deps, XSS/CSRF where relevant; rate CRITICAL/HIGH/MEDIUM/LOW/INFO; output `security-report.md` only (no code edits).
+
+**Success criteria**: Fix-summary and changed files read; injection/secrets/validation considered; each finding has severity and file:line and remediation; report only.
+

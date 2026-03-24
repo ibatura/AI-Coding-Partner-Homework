@@ -1,0 +1,33 @@
+# Task: Generate documentation
+## Documentation
+    - generate README (overview, how to run pipeline and app),
+    - generate HOWTORUN.
+    - Proper README required with my name: Ivan Batura, agent: Claude Code terminal in IDEA
+
+## 📁 Expected Project Structure
+Modify structure of the project to the following:
+```
+homework-4/
+├── README.md
+├── HOWTORUN.md
+├── STUDENT.md
+├── agents/
+│   ├── research-verifier.agent.md
+│   ├── bug-implementer.agent.md
+│   ├── security-verifier.agent.md
+│   └── unit-test-generator.agent.md
+├── skills/
+│   ├── research-quality-measurement.md
+│   └── unit-tests-FIRST.md
+├── context/bugs/XXX/
+│   ├── bug-context.md
+│   ├── research/codebase-research.md, verified-research.md
+│   ├── implementation-plan.md
+│   ├── fix-summary.md
+│   ├── security-report.md
+│   └── test-report.md
+├── [app source and fixed code]
+├── tests/
+└── docs/screenshots/
+```
+agents/ should be copied from .claude/agents/
