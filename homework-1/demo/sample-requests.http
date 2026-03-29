@@ -1,0 +1,88 @@
+### Create a deposit transaction
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-00000",
+  "toAccount": "ACC-12345",
+  "amount": 1000.00,
+  "currency": "USD",
+  "type": "DEPOSIT"
+}
+
+###
+
+### Create a transfer transaction
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": 100.50,
+  "currency": "USD",
+  "type": "TRANSFER"
+}
+
+###
+
+### Create a withdrawal transaction
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-67890",
+  "toAccount": "ACC-00000",
+  "amount": 50.25,
+  "currency": "USD",
+  "type": "WITHDRAWAL"
+}
+
+###
+
+### Get all transactions
+GET http://localhost:8080/api/transactions
+
+###
+
+### Get a specific transaction (replace {id} with actual transaction ID)
+GET http://localhost:8080/api/transactions/{id}
+
+###
+
+### Get account balance for ACC-12345
+GET http://localhost:8080/api/accounts/ACC-12345/balance
+
+###
+
+### Get account balance for ACC-67890
+GET http://localhost:8080/api/accounts/ACC-67890/balance
+
+###
+
+### Test validation - Invalid amount (negative)
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": -100.00,
+  "currency": "USD",
+  "type": "TRANSFER"
+}
+
+###
+
+### Test validation - Missing required field
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+
+{
+  "fromAccount": "ACC-12345",
+  "amount": 100.00,
+  "currency": "USD",
+  "type": "TRANSFER"
+}
+
+###
