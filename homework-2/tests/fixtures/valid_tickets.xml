@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>CUST-001</customer_id>
+    <customer_email>alice@example.com</customer_email>
+    <customer_name>Alice Smith</customer_name>
+    <subject>Cannot login</subject>
+    <description>I cannot login to my account since yesterday morning</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <tags>
+      <tag>login</tag>
+      <tag>account</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-002</customer_id>
+    <customer_email>bob@example.com</customer_email>
+    <customer_name>Bob Jones</customer_name>
+    <subject>Payment issue</subject>
+    <description>My payment was charged twice on my credit card</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <tags>
+      <tag>billing</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+    </metadata>
+  </ticket>
+</tickets>

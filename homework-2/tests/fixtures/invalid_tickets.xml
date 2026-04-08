@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets>
+  <ticket>
+    <customer_id>CUST-001</customer_id>
+    <customer_email>alice@example.com</customer_email>
+    <customer_name>Alice Smith</customer_name>
+    <subject>Cannot login</subject>
+    <description>I cannot login to my account since yesterday morning</description>
+    <category>account_access</category>
+    <priority>high</priority>
+  </ticket>
+  <ticket>
+    <customer_email>bad-email</customer_email>
+    <subject></subject>
+    <description>short</description>
+    <category>invalid_category</category>
+    <priority>extreme</priority>
+  </ticket>
+</tickets>

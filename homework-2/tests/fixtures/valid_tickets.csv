@@ -1,0 +1,4 @@
+customer_id,customer_email,customer_name,subject,description,category,priority,tags,metadata.source,metadata.device_type
+CUST-001,alice@example.com,Alice Smith,Cannot login,I cannot login to my account since yesterday morning,account_access,high,login;account,web_form,desktop
+CUST-002,bob@example.com,Bob Jones,Payment issue,My payment was charged twice on my credit card,billing_question,medium,billing;payment,email,mobile
+CUST-003,carol@example.com,Carol White,App crashes on start,The application crashes immediately on startup with error,technical_issue,urgent,crash;bug,api,tablet

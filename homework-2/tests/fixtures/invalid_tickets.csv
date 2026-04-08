@@ -1,0 +1,4 @@
+customer_id,customer_email,customer_name,subject,description,category,priority,tags,metadata.source,metadata.device_type
+CUST-001,alice@example.com,Alice Smith,Cannot login,I cannot login to my account since yesterday morning,account_access,high,login;account,web_form,desktop
+,bad-email,,,,invalid_cat,extreme,,,
+CUST-003,carol@example.com,Carol White,App crashes,The application crashes on startup with an error,technical_issue,urgent,crash;bug,api,tablet

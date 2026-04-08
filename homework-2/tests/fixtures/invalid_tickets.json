@@ -1,0 +1,18 @@
+[
+  {
+    "customer_id": "CUST-001",
+    "customer_email": "alice@example.com",
+    "customer_name": "Alice Smith",
+    "subject": "Cannot login",
+    "description": "I cannot login to my account since yesterday morning",
+    "category": "account_access",
+    "priority": "high"
+  },
+  {
+    "customer_email": "bad-email",
+    "subject": "",
+    "description": "short",
+    "category": "invalid_category",
+    "priority": "extreme"
+  }
+]
